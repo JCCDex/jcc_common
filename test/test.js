@@ -18,7 +18,6 @@ describe('test getUUID', function () {
     });
 
     it('should get hex value when call getUUID api', function () {
-
         let uuid = jcUtils.getUUID();
         let valid = /[^0x][0-9a-fA-F]$/i.test(uuid);
         expect(valid).to.equal(true);
@@ -26,6 +25,13 @@ describe('test getUUID', function () {
 });
 
 describe('test filterOx', function () {
+
+    it('should return itself if the data is not string', function () {
+        let str = 1;
+        let filterStr = jcUtils.filterOx(str);
+        expect(filterStr).to.equal(1);
+    });
+
     it('should filter 0x if contain 0x', function () {
         let str = '0x123456';
         let filterStr = jcUtils.filterOx(str);
@@ -75,7 +81,7 @@ describe('test isEmptyObject', function () {
 
 describe('test dedupe', function () {
 
-    it('should return empty array if data it not array', function () {
+    it('should return empty array if data is not array', function () {
         let arr = undefined;
         let res = jcUtils.dedupe(arr);
         expect(res).to.deep.equal([]);
@@ -135,9 +141,32 @@ describe('test scientificToDecimal', function () {
         let res = jcUtils.scientificToDecimal(a);
         expect(res).to.equal("10000000000000000000000")
     });
+
+    it('should return 100 when the data is 100', function () {
+        let a = 100;
+        let res = jcUtils.scientificToDecimal(a);
+        expect(res).to.equal(100)
+    });
+
+    it('should return "13000000000000000000000" when the data is 1.3e22', function () {
+        let a = 1.3e22;
+        let res = jcUtils.scientificToDecimal(a);
+        expect(res).to.equal("13000000000000000000000")
+    });
+
+    it('should return "0.0000000000000001" when the data is 1e-16', function () {
+        let a = 1e-16;
+        let res = jcUtils.scientificToDecimal(a);
+        expect(res).to.equal("0.0000000000000001")
+    });
 });
 
 describe('test toThousands', function () {
+    it('should return itself when the data is not number', function () {
+        let a = 'aaaa';
+        let res = jcUtils.toThousands(a);
+        expect(res).to.equal("aaaa")
+    });
     it('should return "1,000" when the data is 1000', function () {
         let a = 1000;
         let res = jcUtils.toThousands(a);

@@ -85,7 +85,6 @@ const scientificToDecimal = (num) => {
             num = coeffArray.join('') + new Array(l + 1).join(zero);
         }
     }
-
     return num;
 };
 
