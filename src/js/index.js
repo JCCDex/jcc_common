@@ -60,7 +60,7 @@ const dedupe = (arr) => {
 }
 
 const isNumber = (num) => {
-    return !Number.isNaN(parseFloat(num)) && Number.isFinite(parseFloat(num));
+    return !Number.isNaN(num) && Number.isFinite(num);
 }
 
 const isInteger = (num) => {
@@ -89,10 +89,11 @@ const scientificToDecimal = (num) => {
 };
 
 const toThousandSeperator = (n) => {
-    if (!isNumber(n)) {
+    let num = parseFloat(n);
+    if (!isNumber(num)) {
         return n;
     }
-    return parseFloat(n).toLocaleString();
+    return num.toLocaleString();
 }
 
 module.exports = {

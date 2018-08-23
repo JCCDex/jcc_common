@@ -102,10 +102,10 @@ describe('test isNumber', function () {
         expect(res).to.equal(true);
     });
 
-    it('"1234" is number', function () {
+    it('"1234" is not number', function () {
         let a = "1234";
         let res = jcUtils.isNumber(a);
-        expect(res).to.equal(true);
+        expect(res).to.equal(false);
     });
 
     it('Infinity is not number', function () {
@@ -132,6 +132,24 @@ describe('test isInteger', function () {
         let a = -1235678900000000000;
         let res = jcUtils.isInteger(a);
         expect(res).to.equal(true)
+    });
+
+    it('-1.2 is not interge', function () {
+        let a = -1.2;
+        let res = jcUtils.isInteger(a);
+        expect(res).to.equal(false)
+    });
+
+    it('1.2 is not interge', function () {
+        let a = 1.2;
+        let res = jcUtils.isInteger(a);
+        expect(res).to.equal(false)
+    });
+
+    it('"1.2" is not interge', function () {
+        let a = "1.2";
+        let res = jcUtils.isInteger(a);
+        expect(res).to.equal(false)
     });
 });
 
