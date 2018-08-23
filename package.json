@@ -1,5 +1,5 @@
 {
-  "name": "jcc_utils",
+  "name": "jcc_common",
   "version": "0.0.1",
   "description": "utils about jcc",
   "files": [
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JCCDex/jcc_utils.git"
+    "url": "git+https://github.com/JCCDex/jcc_common.git"
   },
   "keywords": [
     "jcc",
@@ -21,9 +21,9 @@
   "author": "JCCDex",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JCCDex/jcc_utils/issues"
+    "url": "https://github.com/JCCDex/jcc_common/issues"
   },
-  "homepage": "https://github.com/JCCDex/jcc_utils#readme",
+  "homepage": "https://github.com/JCCDex/jcc_common#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",

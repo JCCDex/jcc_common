@@ -121,16 +121,16 @@ describe('test isNumber', function () {
     });
 });
 
-describe('test isInterge', function () {
+describe('test isInteger', function () {
     it('1235678900000000000 is interge', function () {
         let a = 1235678900000000000;
-        let res = jcUtils.isInterge(a);
+        let res = jcUtils.isInteger(a);
         expect(res).to.equal(true)
     });
 
     it('-1235678900000000000 is interge', function () {
         let a = -1235678900000000000;
-        let res = jcUtils.isInterge(a);
+        let res = jcUtils.isInteger(a);
         expect(res).to.equal(true)
     });
 });
@@ -161,21 +161,21 @@ describe('test scientificToDecimal', function () {
     });
 });
 
-describe('test toThousands', function () {
+describe('test toThousandSeperator', function () {
     it('should return itself when the data is not number', function () {
         let a = 'aaaa';
-        let res = jcUtils.toThousands(a);
+        let res = jcUtils.toThousandSeperator(a);
         expect(res).to.equal("aaaa")
     });
     it('should return "1,000" when the data is 1000', function () {
         let a = 1000;
-        let res = jcUtils.toThousands(a);
+        let res = jcUtils.toThousandSeperator(a);
         expect(res).to.equal("1,000")
     });
 
     it('should return "1,000.1" when the data is 1000.1', function () {
         let a = 1000.1;
-        let res = jcUtils.toThousands(a);
+        let res = jcUtils.toThousandSeperator(a);
         expect(res).to.equal("1,000.1")
     });
 });

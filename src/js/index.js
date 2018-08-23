@@ -63,7 +63,7 @@ const isNumber = (num) => {
     return !Number.isNaN(parseFloat(num)) && Number.isFinite(parseFloat(num));
 }
 
-const isInterge = (num) => {
+const isInteger = (num) => {
     let reg = /^-?\d+$/;
     return reg.test(num);
 }
@@ -88,7 +88,7 @@ const scientificToDecimal = (num) => {
     return num;
 };
 
-const toThousands = (n) => {
+const toThousandSeperator = (n) => {
     if (!isNumber(n)) {
         return n;
     }
@@ -101,7 +101,7 @@ module.exports = {
     isEmptyObject,
     dedupe,
     isNumber,
-    isInterge,
+    isInteger,
     scientificToDecimal,
-    toThousands
+    toThousandSeperator
 }
