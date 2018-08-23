@@ -7,9 +7,9 @@ const {
     isEmptyObject,
     dedupe,
     isNumber,
-    isInterge,
+    isInteger,
     scientificToDecimal,
-    toThousands
+    toThousandSeperator
 } = jcUtils;
 
 module.exports = {
@@ -18,9 +18,9 @@ module.exports = {
     isEmptyObject,
     dedupe,
     isNumber,
-    isInterge,
+    isInteger,
     scientificToDecimal,
-    toThousands
+    toThousandSeperator
 }
 
 export {
@@ -29,7 +29,7 @@ export {
     isEmptyObject,
     dedupe,
     isNumber,
-    isInterge,
+    isInteger,
     scientificToDecimal,
-    toThousands
+    toThousandSeperator
 }
