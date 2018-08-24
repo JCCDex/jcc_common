@@ -1,0 +1,46 @@
+const gulp = require('gulp');
+const eslint = require('gulp-eslint');
+const mocha = require('gulp-mocha');
+const gutil = require('gulp-util');
+const istanbul = require('gulp-istanbul');
+const babel = require('gulp-babel');
+
+gulp.task('eslint', function () {
+    return gulp.src(['src/index.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
+gulp.task('pre-test', function () {
+    return gulp.src(['src/index.js'])
+        .pipe(istanbul())
+        .pipe(istanbul.hookRequire());
+});
+
+gulp.task('build', function () {
+    return gulp.src('src/**/*.js')
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(gulp.dest('lib/'))
+})
+
+gulp.task('test', ['pre-test'], function () {
+    return gulp.src(['test/test.js'])
+        .pipe(mocha())
+        .pipe(istanbul.writeReports())
+        .pipe(istanbul.enforceThresholds({
+            thresholds: {
+                global: 90
+            }
+        }))
+        .on('error', gutil.log);
+});
+
+gulp.task('watch', function () {
+    gulp.watch(['src/js/index.js', 'test/test.js'], ['test']);
+    gulp.watch(['src/js/index.js'], ['eslint']);
+});
+
+gulp.task('default', ['eslint', 'test']);
