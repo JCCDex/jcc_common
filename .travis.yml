@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "8.11.4"
+# email:
+#   on_failure: change
+#   on_success: never
+after_success:
+- npm run coveralls
+env:
+  global:
+  - secure: Zb1Er6CziMlarAV4zCcxb5UZoFC2qDyRVc73IXeJNixJDP5bf/31dKZ+fAxR91FFssAn9k3nz/mFwgCRm9AtoQrJN7f1uEkVBAQNuAoJYczx/jHoP6nmRvFFWnT5trG+6Ay1oZV2bVSEpdS444oollyTXjrq0hmY4mRmutaJ1eEY3+DC7qEmRWlrVTZo8ntS/KVDag6YSev0n+7LArQewGRDrodbM3TJXUzOGdhKE3NMnXPE+83dG3CCKcZNU0LMxIUKHOpGtrKfvd8djR89u6E8z7iuh+ExfKHiYqwM8ktjycVD5uRq3N3MCUBr8pqMUbnD1Xxk+AA26C9U2WzVEwTFMJBO6WsR79BJX5DLNMpR2VXwuNNgjts0Ow3NltX17tj6BcOnL6OAIJHnR+9Ds4fZYUs3h8oIeXPwuP2IsQWSQIA96F9z8j/gFPiHYnvBvyDe2L8v6LriUNG+oqXp2UBWmZK+68GOHAYRXNOqy5ii48ERrYUelBaHl+RDuFXt+KEuh5QoCaBxQfmNkeztmutN60rI1leGfjcZGLX8xNnSyPPWorEWv/ApstuJlbl2QdrSQ0UtJNdIrJ62MRBHKjjQFfptLrft9R75H/HbFOmmXVk8RttfgN5IDCuHRyjb9TC75qaSGZH5eTWckOo0JKN54cYtbxmjKxJ3S7Vqjdo=
