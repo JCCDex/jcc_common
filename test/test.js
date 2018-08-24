@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const jcUtils = require('../src/js');
+const jcUtils = require('../src');
 describe('test getUUID', function () {
     before(function () {
         const jsdom = require('jsdom')
@@ -18,6 +18,7 @@ describe('test getUUID', function () {
     });
 
     it('should get hex value when call getUUID api', function () {
+        this.timeout(0);
         let uuid = jcUtils.getUUID();
         let valid = /[^0x][0-9a-fA-F]$/i.test(uuid);
         expect(valid).to.equal(true);

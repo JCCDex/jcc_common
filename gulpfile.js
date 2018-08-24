@@ -6,14 +6,14 @@ const istanbul = require('gulp-istanbul');
 const babel = require('gulp-babel');
 
 gulp.task('eslint', function () {
-    return gulp.src(['src/index.js', 'src/js/index.js'])
+    return gulp.src(['src/index.js'])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
 
 gulp.task('pre-test', function () {
-    return gulp.src(['src/js/index.js'])
+    return gulp.src(['src/index.js'])
         .pipe(istanbul())
         .pipe(istanbul.hookRequire());
 });
