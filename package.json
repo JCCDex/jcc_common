@@ -32,6 +32,7 @@
     "babel-preset-env": "^1.7.0",
     "canvas-prebuilt": "^1.6.5-prerelease.1",
     "chai": "^4.1.2",
+    "coveralls": "^3.0.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
