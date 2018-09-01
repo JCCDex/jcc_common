@@ -16,7 +16,9 @@
     "url": "git+https://github.com/JCCDex/jcc_common.git"
   },
   "keywords": [
-    "jcc",
+    "jccdex",
+    "dex",
+    "blockchain",
     "utils"
   ],
   "author": "JCCDex",
