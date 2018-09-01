@@ -123,31 +123,31 @@ describe('test isNumber', function () {
 });
 
 describe('test isInteger', function () {
-    it('1235678900000000000 is interge', function () {
+    it('1235678900000000000 is integer', function () {
         let a = 1235678900000000000;
         let res = jcUtils.isInteger(a);
         expect(res).to.equal(true)
     });
 
-    it('-1235678900000000000 is interge', function () {
+    it('-1235678900000000000 is integer', function () {
         let a = -1235678900000000000;
         let res = jcUtils.isInteger(a);
         expect(res).to.equal(true)
     });
 
-    it('-1.2 is not interge', function () {
+    it('-1.2 is not integer', function () {
         let a = -1.2;
         let res = jcUtils.isInteger(a);
         expect(res).to.equal(false)
     });
 
-    it('1.2 is not interge', function () {
+    it('1.2 is not integer', function () {
         let a = 1.2;
         let res = jcUtils.isInteger(a);
         expect(res).to.equal(false)
     });
 
-    it('"1.2" is not interge', function () {
+    it('"1.2" is not integer', function () {
         let a = "1.2";
         let res = jcUtils.isInteger(a);
         expect(res).to.equal(false)
