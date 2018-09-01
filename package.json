@@ -1,6 +1,6 @@
 {
   "name": "jcc_common",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "utils about jcc",
   "files": [
     "lib",
@@ -9,7 +9,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "gulp",
-    "publish": "./publish.sh",
+    "deploy": "./publish.sh",
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
