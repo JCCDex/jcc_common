@@ -1,22 +1,20 @@
 const chai = require('chai');
 const expect = chai.expect;
+const jsdom = require('jsdom')
+const {
+    JSDOM
+} = jsdom
+const a = new JSDOM('<!doctype html><html><body></body></html>', {
+    resources: 'usable'
+});
+const {
+    window
+} = a;
+global.document = window.document
+global.atob = window.atob;
+global.navigator = window.navigator
 const jcUtils = require('../src');
 describe('test getUUID', function () {
-    before(function () {
-        const jsdom = require('jsdom')
-        const {
-            JSDOM
-        } = jsdom
-        const a = new JSDOM('<!doctype html><html><body></body></html>', {
-            resources: 'usable'
-        });
-        const {
-            window
-        } = a;
-        global.document = window.document
-        global.atob = window.atob;
-    });
-
     it('should get hex value when call getUUID api', function () {
         this.timeout(0);
         let uuid = jcUtils.getUUID();
@@ -196,5 +194,13 @@ describe('test toThousandSeperator', function () {
         let a = 1000.1;
         let res = jcUtils.toThousandSeperator(a);
         expect(res).to.equal("1,000.1")
+    });
+});
+
+describe('test browser', function () {
+    it('should have right keys', function () {
+        let browser = jcUtils.browser;
+        expect(browser).to.have.all.keys('versions', 'language');
+        expect(browser.versions).to.have.all.keys('trident', 'presto', 'webKit', 'gecko', 'mobile', 'ios', 'android', 'iPhone', 'iPad', 'webApp', 'weixin', 'qq');
     });
 });

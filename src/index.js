@@ -122,6 +122,27 @@ const toThousandSeperator = (n) => {
     return num.toLocaleString();
 }
 
+const browser = {
+    versions: (function () {
+        let u = navigator.userAgent;
+        return {
+            trident: u.indexOf('Trident') > -1, // IE
+            presto: u.indexOf('Presto') > -1, // Opera
+            webKit: u.indexOf('AppleWebKit') > -1, // Apple、Chrome
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') === -1, // Firefox
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), // mobile
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), // ios
+            android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, // android
+            iPhone: u.indexOf('iPhone') > -1, // iPhone、QQHD
+            iPad: u.indexOf('iPad') > -1, // iPad
+            webApp: u.indexOf('Safari') === -1, // web
+            weixin: u.indexOf('MicroMessenger') > -1, // wechat
+            qq: u.match(/\sQQ/i) === " qq" // QQ
+        };
+    })(),
+    language: (navigator.browserLanguage || navigator.language).toLowerCase()
+};
+
 exports = module.exports = {
     getUUID,
     filterOx,
@@ -130,5 +151,6 @@ exports = module.exports = {
     isNumber,
     isInteger,
     scientificToDecimal,
-    toThousandSeperator
+    toThousandSeperator,
+    browser
 }
