@@ -34,6 +34,7 @@ const bin2hex = (b) => {
     let n
     for (i = 0, l = s.length; i < l; i++) {
         n = s.charCodeAt(i).toString(16)
+        /* istanbul ignore next */
         o += n.length < 2 ? '0' + n : n
     }
     return o
