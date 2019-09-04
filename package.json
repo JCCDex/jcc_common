@@ -10,7 +10,7 @@
   "scripts": {
     "deploy": "./publish.sh",
     "test": "gulp && nyc --reporter=html --reporter=text mocha --timeout=3000 --reporter nyan test/test.js",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,8 @@
   },
   "homepage": "https://github.com/JCCDex/jcc_common#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-preset-env": "^1.7.0",
@@ -47,6 +48,6 @@
     "gulp-eslint": "^5.0.0",
     "jsdom": "^11.12.0",
     "mocha": "^5.2.0",
-    "nyc": "^13.1.0"
+    "nyc": "^14.1.1"
   }
 }
